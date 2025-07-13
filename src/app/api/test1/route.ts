@@ -12,10 +12,9 @@ import { NextResponse } from 'next/server';
          const { title, fullText } = await scrapeBlog(url);
          const summary = summarizeText(fullText);
          const urduSummary = translateToUrdu(summary);
-         return NextResponse.json({ title, summary, fullText, urduSummary });
+         return NextResponse.json({ title, summary,  urduSummary,fullText, });
        } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json({ error: message }, { status: 500 });
        }
      }
-     
