@@ -1,0 +1,66 @@
+export function translateToUrdu(englishText: string): string {
+       const dictionary: Record<string, string> = {
+         'hair': 'بال',
+         'growth': 'بڑھوتری',
+         'food': 'کھانا',
+         'protein': 'پروٹین',
+         'vitamin': 'وٹامن',
+         'health': 'صحت',
+         'eggs': 'انڈے',
+         'nuts': 'مغز',
+         'fish': 'مچھلی',
+         'omega': 'اومیگا',
+         'scalp': 'سر کی کھال',
+         'summary': 'خلاصہ',
+         'and': 'اور',
+         'is': 'ہے',
+         'for': 'کے لیے',
+
+  // New words
+  'the': 'یہ',
+  'are': 'ہیں',
+  'helps': 'مدد کرتا ہے',
+  'important': 'اہم',
+  'prevent': 'روکنا',
+  'loss': 'نقصان',
+  'damage': 'نقصان',
+  'rich': 'مالا مال',
+  'in': 'میں',
+  'found': 'ملا',
+  'contains': 'شامل ہے',
+  'improves': 'بہتر بناتا ہے',
+  'blood': 'خون',
+  'circulation': 'گردش',
+  'roots': 'جڑیں',
+  'beneficial': 'فائدہ مند',
+  'strong': 'مضبوط',
+  'shine': 'چمک',
+  'dry': 'خشک',
+  'oily': 'چکنا',
+  'preventing': 'روک تھام',
+  'breakage': 'ٹوٹ پھوٹ',
+  'natural': 'قدرتی',
+  'remedy': 'علاج',
+  'condition': 'حالت',
+  'growths': 'نشوونما',
+  'daily': 'روزانہ',
+  'intake': 'خوراک',
+  'source': 'ذریعہ',
+  'diet': 'خوراک',
+  'essential': 'ضروری',
+  'care': 'نگہداشت',
+  'maintain': 'برقرار رکھنا',
+  'follicles': 'بالوں کی جڑیں',
+  'hydration': 'نمی',
+  'repair': 'مرمت',
+  'cells': 'خلیے',
+  'reduce': 'کم کریں',
+  'stress': 'تناؤ',
+  'promote': 'فروغ دینا'       
+};
+       const words = englishText.toLowerCase().split(/\W+/).filter(w => w);
+       const translated = words.map(word => dictionary[word] || word).join(' ');
+       return translated.charAt(0).toUpperCase() + translated.slice(1);
+     }
+
+   
