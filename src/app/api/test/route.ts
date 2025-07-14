@@ -21,7 +21,7 @@ import { NextResponse } from 'next/server';
          await BlogText.create({ title, fullText });
 
          // Save to Supabase
-         const { error: supabaseError, data } = await supabase.from('summaries').insert({
+         const { error: supabaseError, data } = await supabase.from('Summaries').insert({
            title,
            summary,
            urdu_summary: urduSummary,
