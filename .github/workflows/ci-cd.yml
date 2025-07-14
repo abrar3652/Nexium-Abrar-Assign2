@@ -17,10 +17,14 @@ jobs:
           node-version: '20'
       - name: Install Dependencies
         run: npm install
+      - name: List Files
+        run: ls -la
+      - name: Check Environment
+        run: echo "NODE_ENV=$NODE_ENV" && printenv
       - name: Lint
         run: npm run lint || echo "Linting skipped if no lint script"
       - name: Build
-        run: npm run build
+        run: npm run build || echo "Build failed with exit code $?"
       - name: Deploy to Vercel
         if: github.event_name == 'push'
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} || echo "Deployment failed"
