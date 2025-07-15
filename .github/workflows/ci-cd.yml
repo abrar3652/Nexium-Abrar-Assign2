@@ -27,4 +27,4 @@ jobs:
         run: npm run build || echo "Build failed with exit code $?"
       - name: Deploy to Vercel
         if: github.event_name == 'push'
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} || echo "Deployment failed"
+        run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }} || echo "Deployment failed"
