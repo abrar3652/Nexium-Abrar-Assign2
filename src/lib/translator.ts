@@ -656,7 +656,30 @@ export function translateToUrdu(englishText: string): string {
   "service": "سروس / خدمت",
   "skill": "مہارت",
   "society": "معاشرہ",
-  "success": "کامیابی"
+  "success": "کامیابی",
+  "diets": "غذا کے منصوبے",
+  "offer": "پیش کرنا",
+  "benefits": "فائدے",
+  "beyond": "سے آگے",
+  "weight": "وزن",
+  "programs": "پروگرام",
+  "losing": "کھونا",
+  "overall": "مجموعی",
+  "biggest": "سب سے بڑا",
+  "challenge": "چیلنج",
+  "finding": "تلاش کرنا",
+  "one": "ایک",
+  "aren’t": "نہیں ہیں ",
+  "changing": "تبدیل کرنا",
+  "be": "ہونا",
+  "ways": "طریقے",
+  "gateway": " راستہ",
+  "improving": "بہتری لانا",
+  "habits": "عادات",
+  "focusing": "توجہ دینا",
+  "leading": "رہنمائی کرنا / لے جانا",
+  "active": "سرگرم",
+  "lifestyle": "طرزِ زندگی"
 };
        const words = englishText.toLowerCase().split(/\W+/).filter(w => w);
        const translated = words.map(word => dictionary[word] || word).join(' ');
