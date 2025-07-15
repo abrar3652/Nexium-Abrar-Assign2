@@ -29,16 +29,14 @@ jobs:
             SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
             SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
             MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        - name: Install Vercel CLI
-          run: npm install -g vercel@latest
         - name: Deploy to Vercel
           if: github.event_name == 'push'
           uses: amondnet/vercel-action@v25
           with:
             vercel-token: ${{ secrets.VERCEL_TOKEN }}
             vercel-args: "--prod"
-            vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  # Optional, add if using a team
-            vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}  # Optional, get from Vercel dashboard
+            # vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}  # Optional, omit if personal
+            vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           env:
             SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
             SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
